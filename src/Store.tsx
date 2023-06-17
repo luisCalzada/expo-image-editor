@@ -6,6 +6,7 @@ export interface ImageData {
   uri: string;
   height: number;
   width: number;
+  base64?: string;
 }
 
 export const imageDataState = atom<ImageData>({
@@ -14,6 +15,7 @@ export const imageDataState = atom<ImageData>({
     uri: "",
     width: 0,
     height: 0,
+    base64: "",
   },
 });
 

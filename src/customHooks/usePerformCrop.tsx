@@ -36,8 +36,9 @@ export const usePerformCrop = () => {
       // Set the editor state to processing and perform the crop
       setProcessing(true);
       const cropResult = await ImageManipulator.manipulateAsync(imageData.uri, [
-        { crop: croppingBounds },
-      ]);
+        { crop: croppingBounds },],
+        { base64: true }  
+      );
       // Check if on web - currently there is a weird bug where it will keep
       // the canvas from ImageManipualtor at originX + width and so we'll just crop
       // the result again for now if on web - TODO write github issue!
@@ -49,8 +50,8 @@ export const usePerformCrop = () => {
         const { uri, width, height } = webCorrection;
         setImageData({ uri, width, height });
       } else {
-        const { uri, width, height } = cropResult;
-        setImageData({ uri, width, height });
+        const { uri, width, height, base64 } = cropResult;
+        setImageData({ uri, width, height, base64 });
       }
       setProcessing(false);
       setEditingMode("operation-select");
