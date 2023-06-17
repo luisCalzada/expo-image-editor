@@ -144,12 +144,14 @@ export function Blur() {
       } else {
         const flippedOutput = await ImageManinpulator.manipulateAsync(
           output.uri as string,
-          [{ flip: ImageManinpulator.FlipType.Vertical }]
+          [{ flip: ImageManinpulator.FlipType.Vertical }],
+          { base64: true }
         );
         setImageData({
           uri: flippedOutput.uri as string,
           width: flippedOutput.width,
           height: flippedOutput.height,
+          base64: flippedOutput.base64,
         });
       }
 

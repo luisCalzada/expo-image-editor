@@ -35,7 +35,7 @@ export function Rotate() {
     } = await ImageManipulator.manipulateAsync(originalImageData.uri, [
       { rotate: angle },
     ]);
-    const { uri, width, height } = await ImageManipulator.manipulateAsync(
+    const { uri, width, height, base64 } = await ImageManipulator.manipulateAsync(
       rotateUri,
       [
         {
@@ -46,9 +46,10 @@ export function Rotate() {
             height: rotateHeight - 2,
           },
         },
-      ]
+      ],
+      { base64: true }
     );
-    setImageData({ uri, width, height });
+    setImageData({ uri, width, height, base64 });
     setProcessing(false);
   };
 
