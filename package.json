@@ -62,7 +62,6 @@
     "expo-gl": "^9.1.1",
     "expo-gl-cpp": "^9.1.2",
     "expo-image-manipulator": "^9.2.2",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
     "react-native-builder-bob": "^0.18.2",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-safe-area-context": "^3.2.0",
